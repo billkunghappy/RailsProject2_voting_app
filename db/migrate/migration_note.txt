@@ -1,0 +1,27 @@
+先用 'rails g migration migration_name' 來創造新migration file
+
+
+
+
+對資料表做修改:
+
+create_table(name, options) 新增資料表
+drop_table(name) 移除資料表
+rename_table(old_name, new_name) 修改資料表名稱
+change_table 修改資料表欄位
+
+
+個別修改資料表欄位:
+
+add_column(table, column, type, options) 新增一個欄位
+rename_column(table, old_column_name, new_column_name) 修改欄位名稱
+change_column(table, column, type, options) 修改欄位的型態(type)
+remove_column(table , column) 移除欄位
+
+
+新增、移除索引:
+
+add_index(table, columns, options) 新增索引
+remove_index(table, index) 移除索引
+
+#options 可為空，或是可自定
