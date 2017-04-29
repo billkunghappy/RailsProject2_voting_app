@@ -5,7 +5,11 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- stylesheet_link_tag 方法會轉換成 CSS 的 <link rel="stylesheet"> 標籤 -->
+    
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- javascript_include_tag 方法會轉換成 JavaScript 的 <script> 標籤 -->
+
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- 這是用cdn添加bootstrap css的方法 -->
   </head>

@@ -1,7 +1,14 @@
 class CandidatesController < ApplicationController
 	before_action :find_candidate_byid, :only=>[:edit,:update,:destroy,:vote]
 	def index
-		@candidates=Candidate.all
+		# @candidates=Candidate.all
+		# all,where,order,limit
+		@candidates=Candidate.over_age(0)
+		# @candidates=Candidate 中 age 超過 0 歲的所有資料
+		# .over_age 這個 scope 是類似 all,where...等用法，但這個用法是我自己定義的，
+		# 我把這個控制 DB 的 scope 定義在 app/models/candidate.rb 中，也只對 Candidate 這個 DB 有用
+
+		# 另外可以發現抓出資料的順序都是 id desc 的，因為我在 app/models/candidate.rb 中，加入了default_scope
 	end
 	def new
 		@candidate=Candidate.new
