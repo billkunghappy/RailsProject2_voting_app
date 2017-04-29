@@ -13,4 +13,8 @@
 
   <%= f.submit %>
 <!-- rails會根據你傳給他的物件來判斷是新的還是舊的，if這裡@candidate是新object，它會認為你是要「新增」，所以 action 的網址自動幫你設定成 /candidates，並且使用 post 方法傳送。反之，用patch -->
+<!-- submit buttom 預設是"create"或"update" -->
+<!-- 這個submit真聰明 -->
 <% end %>
+<br />
+<%= link_to '回候選人列表', candidates_path %>

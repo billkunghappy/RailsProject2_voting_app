@@ -1,7 +1,8 @@
 <h1>候選人列表</h1>
-<table>
+<table class='table'>
 	<th>
 		<tr>
+			<td>投票</td>
 			<td>候選人姓名</td>
       		<td>政黨</td>
       		<td>政見</td>
@@ -11,12 +12,18 @@
 	<tbody>
 		<% @candidates.each do|candidate|%>
 		<tr>
+			<td><%=link_to "投票！！" ,vote_candidate_path(candidate), method: "post", data: { confirm: "確認要投給這位候選人嗎?!" }%></td>	
+			<!-- 用post,patch,delete時都需要傳一個參數給那個路徑，不然會被當成get -->
 			<td><%=candidate.name %>(年齡是<%= candidate.age%>) </td>
 			<td><%= candidate.party%></td>
 			<td><%= candidate.politics%></td>
 			<td><%= candidate.votes%></td>
+			<td><%=link_to "編輯候選人資料" ,edit_candidate_path(candidate)%></td>
+			<td><%=link_to "刪除候選人" ,candidate_path(candidate), method: 'delete',data:{confirm: '確認刪除'}%></td>
 		</tr>
+
 		<%end%>
+		
 	</tbody>
 </table>
 <br/>
